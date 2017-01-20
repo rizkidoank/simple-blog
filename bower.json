@@ -1,0 +1,21 @@
+{
+  "name": "simple_blog",
+  "description": "Simple Blog built with Laravel 5.3",
+  "main": "",
+  "authors": [
+    "rizkidoank"
+  ],
+  "license": "MIT",
+  "homepage": "https://rizkidoank.com",
+  "private": true,
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "bootswatch": "^3.3.7"
+  }
+}

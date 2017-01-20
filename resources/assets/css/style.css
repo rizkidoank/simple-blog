@@ -1,0 +1,31 @@
+body{
+    background: linear-gradient(180deg, #7f8fff, #000000);
+    background-size: 400% 400%;
+
+    -webkit-animation: backround_blog 30s ease infinite;
+    -moz-animation: backround_blog 30s ease infinite;
+    -o-animation: backround_blog 30s ease infinite;
+    animation: backround_blog 30s ease infinite;
+}
+
+
+@-webkit-keyframes backround_blog {
+    0%{background-position:0% 50%}
+    50%{background-position:100% 50%}
+    100%{background-position:0% 50%}
+}
+@-moz-keyframes backround_blog {
+    0%{background-position:0% 50%}
+    50%{background-position:100% 50%}
+    100%{background-position:0% 50%}
+}
+@-o-keyframes backround_blog {
+    0%{background-position:0% 50%}
+    50%{background-position:100% 50%}
+    100%{background-position:0% 50%}
+}
+@keyframes backround_blog {
+    0%{background-position:0% 50%}
+    50%{background-position:100% 50%}
+    100%{background-position:0% 50%}
+}
