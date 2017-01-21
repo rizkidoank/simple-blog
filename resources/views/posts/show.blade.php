@@ -19,14 +19,14 @@
                               <p>Login to Comment</p>
                           @else
                               <form action="/comment/add" method="post" role="form" id="comment" name="comment">
-                              	<legend>Leave a comment</legend>
+                              	<legend>Tinggalkan Komentar :</legend>
                                 <input type="hidden" name="_token" value="{{ csrf_token() }}">
                                 <input type="hidden" name="on_post" value="{{ $post->id }}">
                                 <input type="hidden" name="slug" value="{{ $post->slug }}">
                                 <div class="form-group">
-                                  <textarea required="required" placeholder="Enter comment here" id="body" name="body" class="form-control"></textarea>
+                                  <textarea required="required" placeholder="Silakan komentar disini..." id="body" name="body" class="form-control"></textarea>
                                 </div>
-                                <button type="submit" class="btn btn-primary">Submit</button>
+                                <button type="submit" class="btn btn-primary">Kirim Komentar</button>
                               </form>
                           @endif
                 	  </div>

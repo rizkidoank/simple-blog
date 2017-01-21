@@ -25,17 +25,37 @@
     <div class="container">
         <div class="row">
             <div class="col-md-4">
-                <div class="panel panel-default">
-                    <div class="panel-heading">
-                        <h3 class="panel-title">Dashboard</h3>
-                    </div>
-                    <div class="panel-body">
-                        <div class="list-group">
-                            <a href="/home" class="list-group-item">Home</a>
-                            <a href="/post/new" class="list-group-item">Buat Post Baru</a>
+                <div class="row">
+                    <div class="col-md-12">
+                        <div class="panel panel-default">
+                            <div class="panel-heading">
+                                <h3 class="panel-title">Dashboard</h3>
+                            </div>
+                            <div class="panel-body">
+                                <div class="list-group">
+                                    <a href="/home" class="list-group-item">Home</a>
+                                    <a href="/post/new" class="list-group-item">Buat Post Baru</a>
+                                </div>
+                            </div>
                         </div>
                     </div>
                 </div>
+                <div class="row">
+                    <div class="col-md-12">
+                        <div class="panel panel-default">
+                            <div class="panel-heading">
+                                <h3 class="panel-title">Dashboard</h3>
+                            </div>
+                            <div class="panel-body">
+                                <div class="list-group">
+                                    <a href="/home" class="list-group-item">Home</a>
+                                    <a href="/post/new" class="list-group-item">Buat Post Baru</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
             </div>
             <div class="col-md-8">
                 @yield('content')

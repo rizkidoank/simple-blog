@@ -10,8 +10,8 @@
             Belum ada tulisan, silakan {{ HTML::link('/login','masuk') }}.
         @else
             @foreach($posts as $post)
-                <div class="list-group">
-                    <div class="list-group-item list-group-item-info">
+                <ul class="list-group">
+                    <li class="list-group-item list-group-item-info">
                         <h3><a href="{{ url('/show/'.$post->slug) }}">{{ $post->title }}</a>
                             @if(!Auth::guest() && ($post->author_id == Auth::user()->id || Auth::user()->is_admin()))
                                 @if($post->active == '1')
@@ -23,13 +23,16 @@
                         </h3>
                         {{--<a href="{{ url('/user/'.$post->author_id)}}"></a>--}}
                         <p>{{ $post->created_at->format('d M Y \p\u\k\u\l H:i') }} oleh {{ $post->author->name }}</p>
-                    </div>
-                    <div class="list-group-item">
+                    </li>
+                    <li class="list-group-item">
                         <article>
-                            {!! str_limit($post->body, $limit = 1500, $end = '....... <a href='.url("/".$post->slug).'>Read More</a>') !!}
+                            {!! str_limit($post->body, $limit = 1500, $end = ' ... <br/><a href='.url("/show/".$post->slug).'>Baca selengkapnya</a>') !!}
                         </article>
-                    </div>
-                </div>
+                    </li>
+                    <li class="list-group-item list-group-item-info">
+                        <span class="badge">{{ \App\Comment::where('on_post',$post->id)->count() }}</span>Komentar
+                    </li>
+                </ul>
             @endforeach
             {!! $posts->render() !!}
         @endif

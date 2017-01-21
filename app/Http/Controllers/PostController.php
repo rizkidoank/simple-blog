@@ -15,7 +15,8 @@ class PostController extends Controller
         else
             $posts = Post::where('active',1)->orderBy('created_at','desc')->paginate(5);
         $title = "Tulisan Terakhir";
-        return view('home')->withPosts($posts)->withTitle($title);
+        $comments = Comment::all();
+        return view('home')->withPosts($posts)->withTitle($title)->withComments($comments);
     }
 
     public function create(Request $request){
