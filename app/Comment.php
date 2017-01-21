@@ -25,6 +25,7 @@ use Illuminate\Database\Eloquent\Model;
  */
 class Comment extends Model
 {
+    protected $fillable = ['from_user','body','on_post'];
     public function author(){
         return $this->belongsTo('App\User','from_user');
     }

@@ -17,10 +17,12 @@ Route::group(['middleware' => ['auth']], function(){
     Route::get('/post/new','PostController@create');
     Route::post('/post/new','PostController@store');
     Route::get('/edit/{slug}','PostController@edit');
-    Route::get('/show/{slug}','PostController@show');
     Route::post('/post/update','PostController@update');
     Route::get('delete/{id}','PostController@delete');
-});
+    Route::post('comment/add','CommentController@add');
+    Route::get('comment/delete/{id}','CommentController@delete');
 
+});
+Route::get('/show/{slug}','PostController@show');
 
 Auth::routes();

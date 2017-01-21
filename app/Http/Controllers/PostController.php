@@ -9,8 +9,11 @@ use Illuminate\Http\Request;
 
 class PostController extends Controller
 {
-    public function index(){
-        $posts = Post::where('active',1)->orderBy('created_at','desc')->paginate(5);
+    public function index(Request $request){
+        if (\Auth::user())
+            $posts = Post::orderBy('created_at','desc')->paginate(5);
+        else
+            $posts = Post::where('active',1)->orderBy('created_at','desc')->paginate(5);
         $title = "Tulisan Terakhir";
         return view('home')->withPosts($posts)->withTitle($title);
     }
@@ -53,8 +56,8 @@ class PostController extends Controller
         if(!$post){
             return redirect('/')->withErrors('Oops! Artikel tidak ditemukan!');
         }
-        $comments = $post->comments();
-        return view('posts.show')->withPost($post)->withComments($comments);
+        $comments = $post->comments;
+        return view('posts.show')->withPost($post)->with('comments',$comments);
     }
     public function update(Request $request){
         $p_id = $request->input('post_id');
